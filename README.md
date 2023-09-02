@@ -70,3 +70,4 @@ The user can select the destination tab and look view other users' post that is 
     | /newdestination     | 'NewDestination.js'  | Creates a new destination form                      |
     | /edit/:name         | 'Edit.js'            | Edits a new destination form                        |
  
+## Change log
