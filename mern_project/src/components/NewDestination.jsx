@@ -76,7 +76,6 @@ function NewDestination() {
     }
 
     return (
-
         <>
             <h1>Add a New Destination</h1>
             <Form method='POST' onSubmit={addDestination} >

@@ -38,34 +38,54 @@ function Destination() {
         getDestination()
     }, [])
 
+    const country = destination.map((dest) => {
+        return dest.country_name
+    })
+    const continent = destination.map((dest) => {
+        return dest.continent_name
+    })
+    const description = destination.map((dest) => {
+        return dest.description
+    })
+    const author = destination.map((dest) => {
+        return dest.author
+    })
+    const date_visited = destination.map((dest) => {
+        return dest.date_visited
+    })
+    const picture = destination.map((dest) => {
+        return dest.picture
+    })
+
     return (
         < >
-            <h1>{destination.name} </h1>
-            <hr></hr>
-            <Row className="text-center">
-                <Col>
-                    <Card style={{ width: '40rem' }}>
-                        <Card.Body>
-                            <Card.Title>{destination.country_name}</Card.Title>
-                            <Card.Subtitle className="mb-2 text-muted">{destination.continent_name}</Card.Subtitle>
-                            <Card.Text>{destination.description}</Card.Text>
-                            <Card.Subtitle className="mb-2 text-muted">-{destination.author} visited on {destination.date_visited}</Card.Subtitle>
-                            <Link to={`/continents/${destination.continent_name}`}>Back to {destination.continent_name} destinations</Link>
-                        </Card.Body>
-                    </Card>
-                </Col>
-                <Col className="d-flex flex-row" >
-                    <Image src={destination.picture} rounded className="img-fluid" />
-                </Col>
-            </Row>
-            <Col className="d-flex flex-row">
-                <Link to={`/edit/${destination.name}`}>
-                    <Button variant="success" size="lg"><i className="fa-solid fa-pen-to-square"></i>  EDIT</Button>
-                </Link>
-                <Button variant="danger" size="" onClick={deleteDestination}><i className="fa-regular fa-trash-can"></i>  DELETE</Button>
+        
+        <h1>{destination.name} </h1>
+        <hr></hr>
+        <Row className="text-center">
+            <Col>
+                <Card style={{ width: '40rem' }}>
+                    <Card.Body>
+                        <Card.Title>{country}</Card.Title>
+                        <Card.Subtitle className="mb-2 text-muted">{continent}</Card.Subtitle>
+                        <Card.Text>{description}</Card.Text>
+                        <Card.Subtitle className="mb-2 text-muted">-{author} visited on {date_visited}</Card.Subtitle>
+                        <Link to={`/continents/${continent}`}>Back to {continent} destinations</Link>
+                    </Card.Body>
+                </Card>
             </Col>
-        </>
-    )
+            <Col className="d-flex flex-row" >
+                <Image src={picture} rounded className="img-fluid" />
+            </Col>
+        </Row>
+        <Col className="d-flex flex-row">
+            <Link to={`/edit/${name}`}>
+                <Button variant="success" size="lg"><i className="fa-solid fa-pen-to-square"></i>  EDIT</Button>
+            </Link>
+            <Button variant="danger" size="" onClick={deleteDestination}><i className="fa-regular fa-trash-can"></i>  DELETE</Button>
+        </Col>
+    </>
+)
 }
 
 

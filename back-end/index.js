@@ -24,12 +24,6 @@ if (process.env.NODE_ENV === "production") {
 }
 
 
-// ROOT
-app.get('/', (req, res) => {
-    res.status(200).json({
-        message: 'Welcome to Express Excusions'
-    })
-})
 
 // CONTROLLERS
 

@@ -1,47 +1,72 @@
-# ![Logo !](mern_project\public\logo.png "Express Excursion")
-    Express Excursions is a user-friendly website that allows you to explore continents and share your travel experiences by providing reviews for travel destinations worldwide. 
-    This README provides a brief summary of how to use the website effectively, enabling you to look up continents and contribute reviews for places across the globe.
+# Project Express-Excursion
+Express Excusrions is a website that allows users to post about a travel destination so other can view when searching for their next adventure.  
 
-## Getting Started
-<ol>
-    <li> Access the Express Excursions website by navigating to (www.express-excursions.com.)
-    <li> Create an account by clicking on the "Sign Up" button and providing your email address and a secure password.
-<ol>
+## Descripton
+The user can select the destination tab and look view other users' post that is sorted by continent.  When the destination is selcted a descritption, location, date visited, author, and picture are shown on that destiantion's page.  The destination can be edited or deleted on the same page.  On the destinations page, a user could add a new destination to the site by clicking 'add destination'.  The user will be redirected to a form page where all availble data is filled out and is posted according to the continent selected.
 
-### Browsing Continents
-<ol>
-    <li> Once logged in, you'll be directed to the homepage, where you can find a list of continents.
-    <li> Click on a continent of your choice to explore destinations within that region.
-<ol>
+# Getiing Started
 
-### Discovering Destinations
-<ol>
-    <li>Within each continent page, you'll find a collection of popular travel destinations.
-    <li>Click on a destination to access detailed information about it, including key attractions, local culture, and travel tips.
-    <li>Read reviews and ratings provided by other users who have visited the destination.
-<ol>
+### Dependedncies
+    Front-End:
+        -react
+        -bootstrap
+        -sequelize
+        -react datepicker
 
-### Searching for Specific Destinations
-<ol>
-    <li>To find a particular travel destination, use the search feature.
-    <li>Locate the search bar, usually located at the top of the website.
-    <li>Enter the name of the desired destination and press Enter or click on the search icon.
-    <li>The website will display relevant search results, allowing you to access the destination's information and reviews.
-<ol>
+    Back-end:
+        -cors
+        -dotenv
+        -express
+        -pg
+        -sequelize
+        -react datepicker
 
-## Writing Reviews
-<ol>
-    <li>Share your travel experiences with the Express Excursions community by contributing reviews.
-    <li>Navigate to the page of the destination you wish to review.
-    <li>Scroll down to the review section.
-    <li>Provide a title for your review, rate your overall experience, and write a detailed review sharing your thoughts, recommendations, and helpful tips.
-<ol>
+### Installing
+    Fork and clone from https://github.com/angiedeschutter/Express_Excursions_AWS.git
 
-### Reading and Interacting with Reviews
-<ol>
-    <li>Engage with fellow travelers by reading the reviews they have left for various destinations.
-    <li>Interact with reviews by liking them or leaving comments.
-    <li>Utilize the comments section to ask questions or seek additional information from the review authors.
-<ol>
+### Executing
+    Local operation on separate servers:
+        Front end:
+            -cd front-end 
+            -npm i
+            -set up env file
+            -npm start
 
-We hope you enjoy using Express Excursions to explore continents, discover travel destinations, and share your valuable reviews. Start your journey today and let the world hear about your exciting travel experiences!
+        Back end:
+            -cd back-end
+            -npm i
+            -set up env file
+            -nodemon 
+
+        Run from build file on back-end:
+            -cd back-end
+            -npm i
+            -NODE_ENV=production PORT=8000 node index.js
+
+## Contributors
+    This was started as a group project for the Milestone 2 project for the UNLV Software Development Bootcamp group #3.
+
+
+## API (http://localhost:5000/)
+    | Method | Path                                 | Purpose                                   |
+    | ------ | ------------------------------------ | ----------------------------------------- |
+    | GET    | /                                    | Home page                                 |
+    | GET    | /destinations                        | Find all destinations                     |
+    | GET    | /destinations/:name                  | Find one destination place                |
+    | POST   | /destinations                        | Create new destination                    |
+    | PUT    | /destinations/:name                  | Update a  destination                     |
+    | DELETE | /destinations/:name                  | Delete a  destination                     |
+    | GET    | /continents/:continent_name          | Find all destinations for that continent  |
+ 
+
+## API (http://localhost:3000/)
+    | Path                | Component            | Purpose                                             |
+    | ------------------- | ---------------------| --------------------------------------------------- |
+    | /                   | 'Home.js'            | Home page                                           |
+    | /continents         | 'Contients.js'       | Make a list of contients                            |
+    | /about              | 'About.js'           | About page                                          |
+    | /continents/:name   | 'Destinations.js'    | Create a list of destinations filtered by continent |
+    | /destinations/:name | 'Destination.js'     | Details for a specific destination                  | 
+    | /newdestination     | 'NewDestination.js'  | Creates a new destination form                      |
+    | /edit/:name         | 'Edit.js'            | Edits a new destination form                        |
+ 

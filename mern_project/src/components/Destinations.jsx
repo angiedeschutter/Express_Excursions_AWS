@@ -23,28 +23,32 @@ function Destinations() {
         getDestinations()
     }, [])
 
-    //TAKES THE DESTINATIONS FROM DB ABOVE AND MAKES A LIST OF LINKS 
-    const getDestinationList = destinations.map((destination, i) => {
+        //TAKES THE DESTINATIONS FROM DB ABOVE AND MAKES A LIST OF LINKS 
+        const getDestinationList = 
+         
+        destinations.map((destination, i) => {
+            
+            return (
+                <div key={i}>
+                    <li><i className="fa-solid fa-plane"></i>
+                        <Link to={`/destination/${destination.name}`}>
+                            {destination.name}
+                        </Link>
+                    </li>
+                </div>)
+        })
+    
         return (
-            <div key={i}>
-                <li><i className="fa-solid fa-plane"></i>
-                    <Link to={`/destination/${destination.name}`}>
-                        {destination.name}
-                    </Link>
-                </li>
-            </div>)
-    })
-
-    return (
-
-        <div >
-            <ul>
-                {getDestinationList}
-            </ul>
-            <Link to={`/continents`}> Back to Continents</Link>
-        </div>
-    )
-}
+    
+            <div >
+                <ul>
+                    {getDestinationList}
+                </ul>
+                <Link to={`/continents`}> Back to Continents</Link>
+            </div>
+        )
+    }
+    
 
 
 export default Destinations
